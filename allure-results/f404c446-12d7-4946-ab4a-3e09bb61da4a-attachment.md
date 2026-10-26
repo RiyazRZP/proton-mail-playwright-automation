@@ -1,0 +1,779 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: DraftsTestCases.spec.ts >> Reopen and edit a saved draft and send verfiy
+- Location: tests\DraftsTestCases.spec.ts:50:9
+
+# Error details
+
+```
+Test timeout of 50000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f12e8]:
+  - generic [ref=f12e9]:
+    - heading "Proton Mail" [level=1] [ref=f12e10]
+    - generic [ref=f12e11]:
+      - link "Proton Mail" [ref=f12e12] [cursor=pointer]:
+        - /url: /u/1/inbox
+        - img "Proton Mail" [ref=f12e13]
+      - button "Proton applications" [ref=f12e20] [cursor=pointer]
+    - button "New message" [ref=f12e24] [cursor=pointer]
+    - navigation "Main" [ref=f12e26]:
+      - heading "Navigation" [level=2] [ref=f12e27]
+      - list [ref=f12e29]:
+        - listitem [ref=f12e30]:
+          - link "Inbox 73 unread conversations" [ref=f12e31] [cursor=pointer]:
+            - /url: /u/1/inbox#category=primary
+            - generic [ref=f12e32]:
+              - generic "Inbox [G] [I]" [ref=f12e36]: Inbox
+              - generic "73 unread conversations" [ref=f12e38]: "73"
+        - listitem [ref=f12e39]:
+          - link "Drafts" [ref=f12e40] [cursor=pointer]:
+            - /url: /u/1/all-drafts
+            - generic "Drafts [G] [D]" [ref=f12e45]: Drafts
+        - listitem [ref=f12e46]:
+          - link "Sent" [ref=f12e47] [cursor=pointer]:
+            - /url: /u/1/all-sent
+            - generic "Sent [G] [E]" [ref=f12e52]: Sent
+        - listitem [ref=f12e56]:
+          - link "Starred" [ref=f12e57] [cursor=pointer]:
+            - /url: /u/1/starred
+            - generic "Starred [G] [*]" [ref=f12e62]: Starred
+        - listitem [ref=f12e63]:
+          - generic [ref=f12e64]:
+            - heading "More" [level=3] [ref=f12e65]
+            - button "More" [ref=f12e66] [cursor=pointer]
+        - listitem [ref=f12e71]:
+          - generic [ref=f12e72]:
+            - heading "Views" [level=3] [ref=f12e73]
+            - button "Views" [expanded] [ref=f12e74] [cursor=pointer]
+        - listitem [ref=f12e80]:
+          - link "Mailing lists" [ref=f12e81] [cursor=pointer]:
+            - /url: /u/1/views/newsletters
+            - generic "Mailing lists" [ref=f12e87]
+        - listitem [ref=f12e88]:
+          - generic [ref=f12e89]:
+            - heading "Folders" [level=3] [ref=f12e90]
+            - button "Folders" [ref=f12e91] [cursor=pointer]
+            - generic [ref=f12e96]:
+              - button "Create a new folder" [ref=f12e97] [cursor=pointer]
+              - link "Manage your folders" [ref=f12e101] [cursor=pointer]:
+                - /url: https://account.proton.me/u/1/mail/folders-labels
+        - listitem [ref=f12e106]:
+          - generic [ref=f12e107]:
+            - heading "Labels" [level=3] [ref=f12e108]
+            - button "Labels" [expanded] [ref=f12e109] [cursor=pointer]
+            - generic [ref=f12e114]:
+              - button "Create a new label" [ref=f12e115] [cursor=pointer]
+              - link "Manage your labels" [ref=f12e119] [cursor=pointer]:
+                - /url: https://account.proton.me/u/1/mail/folders-labels
+        - listitem [ref=f12e124]:
+          - link "FilterCheck" [ref=f12e125] [cursor=pointer]:
+            - /url: /u/1/-OTapaBo7cvI5e5ToLxDkvJVThR3RLb5huZ9VCHopyJkY5gvfFBdebLQ3y3XXJdGvyStLXhUYcw3xoOMaACwgg==
+            - generic "FilterCheck" [ref=f12e130]
+        - separator [ref=f12e131]
+        - listitem [ref=f12e132]:
+          - generic [ref=f12e133]:
+            - heading "Get storage bonus" [level=3] [ref=f12e134]
+            - button "Get storage bonus" [expanded] [ref=f12e135] [cursor=pointer]
+            - generic "Tasks to complete count" [ref=f12e141]: 1/3
+        - generic [ref=f12e142]: Complete this checklist within 18 days to double your storage for free.
+        - list [ref=f12e144]:
+          - listitem [ref=f12e145]:
+            - button "Discover privacy features" [ref=f12e146] [cursor=pointer]
+          - listitem [ref=f12e152]:
+            - button "Review import options" [ref=f12e153] [cursor=pointer]
+          - listitem [ref=f12e158]:
+            - button "Download apps" [ref=f12e159] [cursor=pointer]
+      - button "Show navigation bar" [pressed] [ref=f12e165] [cursor=pointer]
+    - generic [ref=f12e169]:
+      - meter [ref=f12e170]:
+        - generic [ref=f12e171]: "Your current storage: 7.34 MB / 500.00 MB"
+      - generic [ref=f12e173]:
+        - link "7.34 MB / 500.00 MB" [ref=f12e175] [cursor=pointer]:
+          - /url: https://account.proton.me/u/1/mail/upgrade?ref=upsell_mail-button-storage
+        - button "Proton Mail 5.0.137.5" [ref=f12e177] [cursor=pointer]:
+          - generic [ref=f12e178]: Proton Mail
+          - text: 5.0.137.5
+  - generic [ref=f12e181]:
+    - banner [ref=f12e182]:
+      - search [ref=f12e184]:
+        - generic [ref=f12e186]:
+          - generic [ref=f12e187]:
+            - button "Search"
+          - textbox "Search messages" [ref=f12e189]
+      - list [ref=f12e191]:
+        - button "Upgrade for US$ 0.99" [ref=f12e193] [cursor=pointer]:
+          - generic [ref=f12e197]:
+            - text: Upgrade for
+            - generic [ref=f12e198]:
+              - generic [ref=f12e199]: US$
+              - generic [ref=f12e200]:
+                - text: "0"
+                - generic [ref=f12e201]: ".99"
+        - listitem [ref=f12e203]:
+          - button "Toggle settings" [ref=f12e205] [cursor=pointer]
+        - listitem [ref=f12e206]:
+          - button "riyazpasha001 riyazpasha001@proton.me" [ref=f12e207] [cursor=pointer]:
+            - generic [ref=f12e208]:
+              - generic [ref=f12e209]: riyazpasha001
+              - generic [ref=f12e210]: riyazpasha001@proton.me
+            - generic [ref=f12e212]: R
+    - main [ref=f12e213]:
+      - generic [ref=f12e214]:
+        - generic [ref=f12e216]:
+          - navigation "Toolbar" [ref=f12e217]:
+            - generic [ref=f12e218]:
+              - generic [ref=f12e219]:
+                - generic [ref=f12e221] [cursor=pointer]:
+                  - checkbox "Select all messages" [ref=f12e222]
+                  - generic [ref=f12e224]: Select all messages
+                - button [ref=f12e225] [cursor=pointer]
+              - heading "Sent" [level=2] [ref=f12e230]
+            - generic [ref=f12e231]:
+              - generic [ref=f12e232]:
+                - button "Unread" [ref=f12e233] [cursor=pointer]
+                - button "Filter" [ref=f12e234] [cursor=pointer]
+              - generic [ref=f12e237]:
+                - button "Previous page" [disabled]
+                - button "1/4" [ref=f12e238] [cursor=pointer]
+                - button "Next page" [ref=f12e239] [cursor=pointer]
+          - region "Message list" [ref=f12e244]:
+            - heading "Message list 0 unread messages" [level=1] [ref=f12e245]
+            - generic [ref=f12e247]:
+              - generic [ref=f12e248]:
+                - region [ref=f12e250] [cursor=pointer]:
+                  - generic [ref=f12e251]:
+                    - checkbox [ref=f12e252]
+                    - generic [aria-hidden] [ref=f12e254]: F
+                  - generic [ref=f12e256]:
+                    - button "Star message" [ref=f12e258]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e264]
+                    - heading "Draft open and edit 1792990334351" [level=2] [ref=f12e268]
+                    - generic [ref=f12e271]:
+                      - time [aria-hidden] [ref=f12e272]: 10:23 AM
+                      - generic [ref=f12e273]: Monday, October 26th, 2026 at 10:23 AM
+                - region [ref=f12e275] [cursor=pointer]:
+                  - generic [ref=f12e276]:
+                    - checkbox [ref=f12e277]
+                    - generic [aria-hidden] [ref=f12e279]: F
+                  - generic [ref=f12e281]:
+                    - button "Star message" [ref=f12e283]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e289]
+                    - heading "Draft open and edit 1792990257278" [level=2] [ref=f12e293]
+                    - generic [ref=f12e296]:
+                      - time [aria-hidden] [ref=f12e297]: 10:22 AM
+                      - generic [ref=f12e298]: Monday, October 26th, 2026 at 10:22 AM
+                - region [ref=f12e300] [cursor=pointer]:
+                  - generic [ref=f12e301]:
+                    - checkbox [ref=f12e302]
+                    - generic [aria-hidden] [ref=f12e304]: F
+                  - generic [ref=f12e305]:
+                    - generic [ref=f12e306]:
+                      - button "Star message" [ref=f12e308]
+                      - generic "faiyazpasha001@proton.me" [ref=f12e314]
+                      - heading "send email for validation attachment 1792990254138" [level=2] [ref=f12e318]
+                      - generic [ref=f12e320]:
+                        - generic [ref=f12e321]: Has 1 attachment (176.45 KB)
+                        - generic [ref=f12e325]:
+                          - time [aria-hidden] [ref=f12e326]: 10:21 AM
+                          - generic [ref=f12e327]: Monday, October 26th, 2026 at 10:21 AM
+                    - button [ref=f12e330]:
+                      - generic "AttachmentFile.pdf" [ref=f12e334]:
+                        - generic [aria-hidden] [ref=f12e335]: AttachmentFile.
+                        - generic [aria-hidden] [ref=f12e336]: pdf
+                - region [ref=f12e338] [cursor=pointer]:
+                  - generic [ref=f12e339]:
+                    - checkbox [ref=f12e340]
+                    - generic [aria-hidden] [ref=f12e342]: F
+                  - generic [ref=f12e343]:
+                    - generic [ref=f12e344]:
+                      - button "Star message" [ref=f12e346]
+                      - generic "faiyazpasha001@proton.me" [ref=f12e352]
+                      - heading "send email for validation attachment 1792990087110" [level=2] [ref=f12e356]
+                      - generic [ref=f12e358]:
+                        - generic [ref=f12e359]: Has 1 attachment (176.45 KB)
+                        - generic [ref=f12e363]:
+                          - time [aria-hidden] [ref=f12e364]: 10:18 AM
+                          - generic [ref=f12e365]: Monday, October 26th, 2026 at 10:18 AM
+                    - button [ref=f12e368]:
+                      - generic "AttachmentFile.pdf" [ref=f12e372]:
+                        - generic [aria-hidden] [ref=f12e373]: AttachmentFile.
+                        - generic [aria-hidden] [ref=f12e374]: pdf
+                - region [ref=f12e376] [cursor=pointer]:
+                  - generic [ref=f12e377]:
+                    - checkbox [ref=f12e378]
+                    - generic [aria-hidden] [ref=f12e380]: F
+                  - generic [ref=f12e382]:
+                    - button "Star message" [ref=f12e384]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e390]
+                    - heading "Draft open and edit 1792989950292" [level=2] [ref=f12e394]
+                    - generic [ref=f12e397]:
+                      - time [aria-hidden] [ref=f12e398]: 10:16 AM
+                      - generic [ref=f12e399]: Monday, October 26th, 2026 at 10:16 AM
+                - region [ref=f12e401] [cursor=pointer]:
+                  - generic [ref=f12e402]:
+                    - checkbox [ref=f12e403]
+                    - generic [aria-hidden] [ref=f12e405]: F
+                  - generic [ref=f12e407]:
+                    - button "Star message" [ref=f12e409]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e415]
+                    - heading "Draft open and edit 1792989874824" [level=2] [ref=f12e419]
+                    - generic [ref=f12e422]:
+                      - time [aria-hidden] [ref=f12e423]: 10:15 AM
+                      - generic [ref=f12e424]: Monday, October 26th, 2026 at 10:15 AM
+                - region [ref=f12e426] [cursor=pointer]:
+                  - generic [ref=f12e427]:
+                    - checkbox [ref=f12e428]
+                    - generic [aria-hidden] [ref=f12e430]: F
+                  - generic [ref=f12e432]:
+                    - button "Star message" [ref=f12e434]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e440]
+                    - heading "Draft open and edit 1792989817896" [level=2] [ref=f12e444]
+                    - generic [ref=f12e447]:
+                      - time [aria-hidden] [ref=f12e448]: 10:14 AM
+                      - generic [ref=f12e449]: Monday, October 26th, 2026 at 10:14 AM
+                - region [ref=f12e451] [cursor=pointer]:
+                  - generic [ref=f12e452]:
+                    - checkbox [ref=f12e453]
+                    - generic [aria-hidden] [ref=f12e455]: F
+                  - generic [ref=f12e457]:
+                    - button "Star message" [ref=f12e459]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e465]
+                    - heading "Draft open and edit 1792989568150" [level=2] [ref=f12e469]
+                    - generic [ref=f12e472]:
+                      - time [aria-hidden] [ref=f12e473]: 10:10 AM
+                      - generic [ref=f12e474]: Monday, October 26th, 2026 at 10:10 AM
+                - region [ref=f12e476] [cursor=pointer]:
+                  - generic [ref=f12e477]:
+                    - checkbox [ref=f12e478]
+                    - generic [aria-hidden] [ref=f12e480]: F
+                  - generic [ref=f12e482]:
+                    - button "Star message" [ref=f12e484]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e490]
+                    - heading "Draft open and edit 1792989474161" [level=2] [ref=f12e494]
+                    - generic [ref=f12e497]:
+                      - time [aria-hidden] [ref=f12e498]: 10:08 AM
+                      - generic [ref=f12e499]: Monday, October 26th, 2026 at 10:08 AM
+                - region [ref=f12e501] [cursor=pointer]:
+                  - generic [ref=f12e502]:
+                    - checkbox [ref=f12e503]
+                    - generic [aria-hidden] [ref=f12e505]: F
+                  - generic [ref=f12e507]:
+                    - button "Star message" [ref=f12e509]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e515]
+                    - heading "Draft open and edit 1792989242251" [level=2] [ref=f12e519]
+                    - generic [ref=f12e522]:
+                      - time [aria-hidden] [ref=f12e523]: 10:04 AM
+                      - generic [ref=f12e524]: Monday, October 26th, 2026 at 10:04 AM
+                - region [ref=f12e526] [cursor=pointer]:
+                  - generic [ref=f12e527]:
+                    - checkbox [ref=f12e528]
+                    - generic [aria-hidden] [ref=f12e530]: F
+                  - generic [ref=f12e532]:
+                    - button "Star message" [ref=f12e534]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e540]
+                    - heading "Draft open and edit 1792989139810" [level=2] [ref=f12e544]
+                    - generic [ref=f12e547]:
+                      - time [aria-hidden] [ref=f12e548]: 10:02 AM
+                      - generic [ref=f12e549]: Monday, October 26th, 2026 at 10:02 AM
+                - region [ref=f12e551] [cursor=pointer]:
+                  - generic [ref=f12e552]:
+                    - checkbox [ref=f12e553]
+                    - generic [aria-hidden] [ref=f12e555]: F
+                  - generic [ref=f12e557]:
+                    - button "Star message" [ref=f12e559]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e565]
+                    - heading "Draft open and edit 1792988954505" [level=2] [ref=f12e569]
+                    - generic [ref=f12e572]:
+                      - time [aria-hidden] [ref=f12e573]: 9:59 AM
+                      - generic [ref=f12e574]: Monday, October 26th, 2026 at 9:59 AM
+                - region [ref=f12e576] [cursor=pointer]:
+                  - generic [ref=f12e577]:
+                    - checkbox [ref=f12e578]
+                    - generic [aria-hidden] [ref=f12e580]: F
+                  - generic [ref=f12e582]:
+                    - button "Star message" [ref=f12e584]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e590]
+                    - heading "Draft open and edit 1792988793826" [level=2] [ref=f12e594]
+                    - generic [ref=f12e597]:
+                      - time [aria-hidden] [ref=f12e598]: 9:57 AM
+                      - generic [ref=f12e599]: Monday, October 26th, 2026 at 9:57 AM
+                - region [ref=f12e601] [cursor=pointer]:
+                  - generic [ref=f12e602]:
+                    - checkbox [ref=f12e603]
+                    - generic [aria-hidden] [ref=f12e605]: F
+                  - generic [ref=f12e607]:
+                    - button "Star message" [ref=f12e609]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e615]
+                    - heading "Draft open and edit 1792988527665" [level=2] [ref=f12e619]
+                    - generic [ref=f12e622]:
+                      - time [aria-hidden] [ref=f12e623]: 9:53 AM
+                      - generic [ref=f12e624]: Monday, October 26th, 2026 at 9:53 AM
+                - region [ref=f12e626] [cursor=pointer]:
+                  - generic [ref=f12e627]:
+                    - checkbox [ref=f12e628]
+                    - generic [aria-hidden] [ref=f12e630]: F
+                  - generic [ref=f12e632]:
+                    - button "Star message" [ref=f12e634]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e640]
+                    - heading "Draft open and edit 1792988303746" [level=2] [ref=f12e644]
+                    - generic [ref=f12e647]:
+                      - time [aria-hidden] [ref=f12e648]: 9:48 AM
+                      - generic [ref=f12e649]: Monday, October 26th, 2026 at 9:48 AM
+                - region [ref=f12e651] [cursor=pointer]:
+                  - generic [ref=f12e652]:
+                    - checkbox [ref=f12e653]
+                    - generic [aria-hidden] [ref=f12e655]: F
+                  - generic [ref=f12e657]:
+                    - button "Star message" [ref=f12e659]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e665]
+                    - heading "Draft open and edit 1792988260724" [level=2] [ref=f12e669]
+                    - generic [ref=f12e672]:
+                      - time [aria-hidden] [ref=f12e673]: 9:48 AM
+                      - generic [ref=f12e674]: Monday, October 26th, 2026 at 9:48 AM
+                - region [ref=f12e676] [cursor=pointer]:
+                  - generic [ref=f12e677]:
+                    - checkbox [ref=f12e678]
+                    - generic [aria-hidden] [ref=f12e680]: F
+                  - generic [ref=f12e682]:
+                    - button "Star message" [ref=f12e684]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e690]
+                    - heading "Draft open and edit 1792987495632" [level=2] [ref=f12e694]
+                    - generic [ref=f12e697]:
+                      - time [aria-hidden] [ref=f12e698]: 9:35 AM
+                      - generic [ref=f12e699]: Monday, October 26th, 2026 at 9:35 AM
+                - region [ref=f12e701] [cursor=pointer]:
+                  - generic [ref=f12e702]:
+                    - checkbox [ref=f12e703]
+                    - generic [aria-hidden] [ref=f12e705]: F
+                  - generic [ref=f12e707]:
+                    - button "Star message" [ref=f12e709]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e715]:
+                      - generic [ref=f12e716]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e717]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792987393823" [level=2] [ref=f12e721]
+                    - generic [ref=f12e724]:
+                      - time [aria-hidden] [ref=f12e725]: 9:34 AM
+                      - generic [ref=f12e726]: Monday, October 26th, 2026 at 9:34 AM
+                - region [ref=f12e728] [cursor=pointer]:
+                  - generic [ref=f12e729]:
+                    - checkbox [ref=f12e730]
+                    - generic [aria-hidden] [ref=f12e732]: F
+                  - generic [ref=f12e734]:
+                    - button "Star message" [ref=f12e736]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e742]
+                    - heading "Send email Test 002 1792987393823" [level=2] [ref=f12e746]
+                    - generic [ref=f12e749]:
+                      - time [aria-hidden] [ref=f12e750]: 9:33 AM
+                      - generic [ref=f12e751]: Monday, October 26th, 2026 at 9:33 AM
+                - region [ref=f12e753] [cursor=pointer]:
+                  - generic [ref=f12e754]:
+                    - checkbox [ref=f12e755]
+                    - generic [aria-hidden] [ref=f12e757]: F
+                  - generic [ref=f12e759]:
+                    - button "Star message" [ref=f12e761]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e767]:
+                      - generic [ref=f12e768]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e769]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792935181357" [level=2] [ref=f12e773]
+                    - generic [ref=f12e776]:
+                      - time [aria-hidden] [ref=f12e777]: Yesterday
+                      - generic [ref=f12e778]: Sunday, October 25th, 2026 at 7:04 PM
+                - region [ref=f12e780] [cursor=pointer]:
+                  - generic [ref=f12e781]:
+                    - checkbox [ref=f12e782]
+                    - generic [aria-hidden] [ref=f12e784]: F
+                  - generic [ref=f12e786]:
+                    - button "Star message" [ref=f12e788]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e794]
+                    - heading "Send email Test 002 1792935181356" [level=2] [ref=f12e798]
+                    - generic [ref=f12e801]:
+                      - time [aria-hidden] [ref=f12e802]: Yesterday
+                      - generic [ref=f12e803]: Sunday, October 25th, 2026 at 7:04 PM
+                - region [ref=f12e805] [cursor=pointer]:
+                  - generic [ref=f12e806]:
+                    - checkbox [ref=f12e807]
+                    - generic [aria-hidden] [ref=f12e809]: F
+                  - generic [ref=f12e811]:
+                    - button "Star message" [ref=f12e813]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e819]
+                    - heading "Draft open and edit 1792934663810" [level=2] [ref=f12e823]
+                    - generic [ref=f12e826]:
+                      - time [aria-hidden] [ref=f12e827]: Yesterday
+                      - generic [ref=f12e828]: Sunday, October 25th, 2026 at 6:55 PM
+                - region [ref=f12e830] [cursor=pointer]:
+                  - generic [ref=f12e831]:
+                    - checkbox [ref=f12e832]
+                    - generic [aria-hidden] [ref=f12e834]: F
+                  - generic [ref=f12e836]:
+                    - button "Star message" [ref=f12e838]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e844]
+                    - heading "Send email Test 002 1792934614539" [level=2] [ref=f12e848]
+                    - generic [ref=f12e851]:
+                      - time [aria-hidden] [ref=f12e852]: Yesterday
+                      - generic [ref=f12e853]: Sunday, October 25th, 2026 at 6:54 PM
+                - region [ref=f12e855] [cursor=pointer]:
+                  - generic [ref=f12e856]:
+                    - checkbox [ref=f12e857]
+                    - generic [aria-hidden] [ref=f12e859]: F
+                  - generic [ref=f12e861]:
+                    - button "Star message" [ref=f12e863]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e869]
+                    - heading "Send email Test 002 1792934510151" [level=2] [ref=f12e873]
+                    - generic [ref=f12e876]:
+                      - time [aria-hidden] [ref=f12e877]: Yesterday
+                      - generic [ref=f12e878]: Sunday, October 25th, 2026 at 6:52 PM
+                - region [ref=f12e880] [cursor=pointer]:
+                  - generic [ref=f12e881]:
+                    - checkbox [ref=f12e882]
+                    - generic [aria-hidden] [ref=f12e884]: F
+                  - generic [ref=f12e886]:
+                    - button "Star message" [ref=f12e888]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e894]:
+                      - generic [ref=f12e895]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e896]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792934510170" [level=2] [ref=f12e900]
+                    - generic [ref=f12e903]:
+                      - time [aria-hidden] [ref=f12e904]: Yesterday
+                      - generic [ref=f12e905]: Sunday, October 25th, 2026 at 6:52 PM
+                - region [ref=f12e907] [cursor=pointer]:
+                  - generic [ref=f12e908]:
+                    - checkbox [ref=f12e909]
+                    - generic [aria-hidden] [ref=f12e911]: F
+                  - generic [ref=f12e913]:
+                    - button "Star message" [ref=f12e915]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e921]:
+                      - generic [ref=f12e922]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e923]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792934192238" [level=2] [ref=f12e927]
+                    - generic [ref=f12e930]:
+                      - time [aria-hidden] [ref=f12e931]: Yesterday
+                      - generic [ref=f12e932]: Sunday, October 25th, 2026 at 6:47 PM
+                - region [ref=f12e934] [cursor=pointer]:
+                  - generic [ref=f12e935]:
+                    - checkbox [ref=f12e936]
+                    - generic [aria-hidden] [ref=f12e938]: F
+                  - generic [ref=f12e940]:
+                    - button "Star message" [ref=f12e942]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e948]
+                    - heading "Send email Test 002 1792934192374" [level=2] [ref=f12e952]
+                    - generic [ref=f12e955]:
+                      - time [aria-hidden] [ref=f12e956]: Yesterday
+                      - generic [ref=f12e957]: Sunday, October 25th, 2026 at 6:47 PM
+                - region [ref=f12e959] [cursor=pointer]:
+                  - generic [ref=f12e960]:
+                    - checkbox [ref=f12e961]
+                    - generic [aria-hidden] [ref=f12e963]: F
+                  - generic [ref=f12e965]:
+                    - button "Star message" [ref=f12e967]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e973]:
+                      - generic [ref=f12e974]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e975]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792934099039" [level=2] [ref=f12e979]
+                    - generic [ref=f12e982]:
+                      - time [aria-hidden] [ref=f12e983]: Yesterday
+                      - generic [ref=f12e984]: Sunday, October 25th, 2026 at 6:45 PM
+                - region [ref=f12e986] [cursor=pointer]:
+                  - generic [ref=f12e987]:
+                    - checkbox [ref=f12e988]
+                    - generic [aria-hidden] [ref=f12e990]: F
+                  - generic [ref=f12e992]:
+                    - button "Star message" [ref=f12e994]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1000]
+                    - heading "Send email Test 002 1792934098994" [level=2] [ref=f12e1004]
+                    - generic [ref=f12e1007]:
+                      - time [aria-hidden] [ref=f12e1008]: Yesterday
+                      - generic [ref=f12e1009]: Sunday, October 25th, 2026 at 6:45 PM
+                - region [ref=f12e1011] [cursor=pointer]:
+                  - generic [ref=f12e1012]:
+                    - checkbox [ref=f12e1013]
+                    - generic [aria-hidden] [ref=f12e1015]: F
+                  - generic [ref=f12e1017]:
+                    - button "Star message" [ref=f12e1019]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1025]
+                    - heading "Async Behaviour check" [level=2] [ref=f12e1029]
+                    - generic [ref=f12e1032]:
+                      - time [aria-hidden] [ref=f12e1033]: Yesterday
+                      - generic [ref=f12e1034]: Sunday, October 25th, 2026 at 6:09 PM
+                - region [ref=f12e1036] [cursor=pointer]:
+                  - generic [ref=f12e1037]:
+                    - checkbox [ref=f12e1038]
+                    - generic [aria-hidden] [ref=f12e1040]: F
+                  - generic [ref=f12e1042]:
+                    - button "Star message" [ref=f12e1044]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1050]
+                    - heading "Send email Test 002 1792918184816" [level=2] [ref=f12e1054]
+                    - generic [ref=f12e1057]:
+                      - time [aria-hidden] [ref=f12e1058]: Yesterday
+                      - generic [ref=f12e1059]: Sunday, October 25th, 2026 at 2:20 PM
+                - region [ref=f12e1061] [cursor=pointer]:
+                  - generic [ref=f12e1062]:
+                    - checkbox [ref=f12e1063]
+                    - generic [aria-hidden] [ref=f12e1065]: F
+                  - generic [ref=f12e1067]:
+                    - button "Star message" [ref=f12e1069]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1075]:
+                      - generic [ref=f12e1076]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1077]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792918184816" [level=2] [ref=f12e1081]
+                    - generic [ref=f12e1084]:
+                      - time [aria-hidden] [ref=f12e1085]: Yesterday
+                      - generic [ref=f12e1086]: Sunday, October 25th, 2026 at 2:20 PM
+                - region [ref=f12e1088] [cursor=pointer]:
+                  - generic [ref=f12e1089]:
+                    - checkbox [ref=f12e1090]
+                    - generic [aria-hidden] [ref=f12e1092]: F
+                  - generic [ref=f12e1094]:
+                    - button "Star message" [ref=f12e1096]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1102]:
+                      - generic [ref=f12e1103]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1104]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792917566507" [level=2] [ref=f12e1108]
+                    - generic [ref=f12e1111]:
+                      - time [aria-hidden] [ref=f12e1112]: Yesterday
+                      - generic [ref=f12e1113]: Sunday, October 25th, 2026 at 2:10 PM
+                - region [ref=f12e1115] [cursor=pointer]:
+                  - generic [ref=f12e1116]:
+                    - checkbox [ref=f12e1117]
+                    - generic [aria-hidden] [ref=f12e1119]: F
+                  - generic [ref=f12e1121]:
+                    - button "Star message" [ref=f12e1123]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1129]
+                    - heading "Send email Test 002 1792917566536" [level=2] [ref=f12e1133]
+                    - generic [ref=f12e1136]:
+                      - time [aria-hidden] [ref=f12e1137]: Yesterday
+                      - generic [ref=f12e1138]: Sunday, October 25th, 2026 at 2:10 PM
+                - region [ref=f12e1140] [cursor=pointer]:
+                  - generic [ref=f12e1141]:
+                    - checkbox [ref=f12e1142]
+                    - generic [aria-hidden] [ref=f12e1144]: F
+                  - generic [ref=f12e1146]:
+                    - button "Star message" [ref=f12e1148]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1154]
+                    - heading "Send email Test 002 1792917230722" [level=2] [ref=f12e1158]
+                    - generic [ref=f12e1161]:
+                      - time [aria-hidden] [ref=f12e1162]: Yesterday
+                      - generic [ref=f12e1163]: Sunday, October 25th, 2026 at 2:04 PM
+                - region [ref=f12e1165] [cursor=pointer]:
+                  - generic [ref=f12e1166]:
+                    - checkbox [ref=f12e1167]
+                    - generic [aria-hidden] [ref=f12e1169]: F
+                  - generic [ref=f12e1171]:
+                    - button "Star message" [ref=f12e1173]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1179]:
+                      - generic [ref=f12e1180]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1181]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792917230731" [level=2] [ref=f12e1185]
+                    - generic [ref=f12e1188]:
+                      - time [aria-hidden] [ref=f12e1189]: Yesterday
+                      - generic [ref=f12e1190]: Sunday, October 25th, 2026 at 2:04 PM
+                - region [ref=f12e1192] [cursor=pointer]:
+                  - generic [ref=f12e1193]:
+                    - checkbox [ref=f12e1194]
+                    - generic [aria-hidden] [ref=f12e1196]: F
+                  - generic [ref=f12e1198]:
+                    - button "Star message" [ref=f12e1200]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1206]:
+                      - generic [ref=f12e1207]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1208]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002 1792916966728" [level=2] [ref=f12e1212]
+                    - generic [ref=f12e1215]:
+                      - time [aria-hidden] [ref=f12e1216]: Yesterday
+                      - generic [ref=f12e1217]: Sunday, October 25th, 2026 at 2:00 PM
+                - region [ref=f12e1219] [cursor=pointer]:
+                  - generic [ref=f12e1220]:
+                    - checkbox [ref=f12e1221]
+                    - generic [aria-hidden] [ref=f12e1223]: F
+                  - generic [ref=f12e1225]:
+                    - button "Star message" [ref=f12e1227]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1233]
+                    - heading "Send email Test 002 1792916966725" [level=2] [ref=f12e1237]
+                    - generic [ref=f12e1240]:
+                      - time [aria-hidden] [ref=f12e1241]: Yesterday
+                      - generic [ref=f12e1242]: Sunday, October 25th, 2026 at 2:00 PM
+                - region [ref=f12e1244] [cursor=pointer]:
+                  - generic [ref=f12e1245]:
+                    - checkbox [ref=f12e1246]
+                    - generic [aria-hidden] [ref=f12e1248]: F
+                  - generic [ref=f12e1250]:
+                    - button "Star message" [ref=f12e1252]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1258]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1262]
+                    - generic [ref=f12e1265]:
+                      - time [aria-hidden] [ref=f12e1266]: Yesterday
+                      - generic [ref=f12e1267]: Sunday, October 25th, 2026 at 11:13 AM
+                - region [ref=f12e1269] [cursor=pointer]:
+                  - generic [ref=f12e1270]:
+                    - checkbox [ref=f12e1271]
+                    - generic [aria-hidden] [ref=f12e1273]: F
+                  - generic [ref=f12e1275]:
+                    - button "Star message" [ref=f12e1277]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1283]:
+                      - generic [ref=f12e1284]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1285]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002" [level=2] [ref=f12e1289]
+                    - generic [ref=f12e1292]:
+                      - time [aria-hidden] [ref=f12e1293]: Yesterday
+                      - generic [ref=f12e1294]: Sunday, October 25th, 2026 at 11:12 AM
+                - region [ref=f12e1296] [cursor=pointer]:
+                  - generic [ref=f12e1297]:
+                    - checkbox [ref=f12e1298]
+                    - generic [aria-hidden] [ref=f12e1300]: F
+                  - generic [ref=f12e1302]:
+                    - button "Star message" [ref=f12e1304]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1310]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1314]
+                    - generic [ref=f12e1317]:
+                      - time [aria-hidden] [ref=f12e1318]: Yesterday
+                      - generic [ref=f12e1319]: Sunday, October 25th, 2026 at 11:12 AM
+                - region [ref=f12e1321] [cursor=pointer]:
+                  - generic [ref=f12e1322]:
+                    - checkbox [ref=f12e1323]
+                    - generic [aria-hidden] [ref=f12e1325]: F
+                  - generic [ref=f12e1327]:
+                    - button "Star message" [ref=f12e1329]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1335]:
+                      - generic [ref=f12e1336]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1337]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002" [level=2] [ref=f12e1341]
+                    - generic [ref=f12e1344]:
+                      - time [aria-hidden] [ref=f12e1345]: Yesterday
+                      - generic [ref=f12e1346]: Sunday, October 25th, 2026 at 11:04 AM
+                - region [ref=f12e1348] [cursor=pointer]:
+                  - generic [ref=f12e1349]:
+                    - checkbox [ref=f12e1350]
+                    - generic [aria-hidden] [ref=f12e1352]: F
+                  - generic [ref=f12e1354]:
+                    - button "Star message" [ref=f12e1356]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1362]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1366]
+                    - generic [ref=f12e1369]:
+                      - time [aria-hidden] [ref=f12e1370]: Yesterday
+                      - generic [ref=f12e1371]: Sunday, October 25th, 2026 at 11:04 AM
+                - region [ref=f12e1373] [cursor=pointer]:
+                  - generic [ref=f12e1374]:
+                    - checkbox [ref=f12e1375]
+                    - generic [aria-hidden] [ref=f12e1377]: F
+                  - generic [ref=f12e1379]:
+                    - button "Star message" [ref=f12e1381]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1387]:
+                      - generic [ref=f12e1388]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1389]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002" [level=2] [ref=f12e1393]
+                    - generic [ref=f12e1396]:
+                      - time [aria-hidden] [ref=f12e1397]: Yesterday
+                      - generic [ref=f12e1398]: Sunday, October 25th, 2026 at 11:04 AM
+                - region [ref=f12e1400] [cursor=pointer]:
+                  - generic [ref=f12e1401]:
+                    - checkbox [ref=f12e1402]
+                    - generic [aria-hidden] [ref=f12e1404]: F
+                  - generic [ref=f12e1406]:
+                    - button "Star message" [ref=f12e1408]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1414]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1418]
+                    - generic [ref=f12e1421]:
+                      - time [aria-hidden] [ref=f12e1422]: Yesterday
+                      - generic [ref=f12e1423]: Sunday, October 25th, 2026 at 10:49 AM
+                - region [ref=f12e1425] [cursor=pointer]:
+                  - generic [ref=f12e1426]:
+                    - checkbox [ref=f12e1427]
+                    - generic [aria-hidden] [ref=f12e1429]: F
+                  - generic [ref=f12e1431]:
+                    - button "Star message" [ref=f12e1433]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1439]:
+                      - generic [ref=f12e1440]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1441]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002" [level=2] [ref=f12e1445]
+                    - generic [ref=f12e1448]:
+                      - time [aria-hidden] [ref=f12e1449]: Yesterday
+                      - generic [ref=f12e1450]: Sunday, October 25th, 2026 at 10:48 AM
+                - region [ref=f12e1452] [cursor=pointer]:
+                  - generic [ref=f12e1453]:
+                    - checkbox [ref=f12e1454]
+                    - generic [aria-hidden] [ref=f12e1456]: F
+                  - generic [ref=f12e1458]:
+                    - button "Star message" [ref=f12e1460]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1466]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1470]
+                    - generic [ref=f12e1473]:
+                      - time [aria-hidden] [ref=f12e1474]: Yesterday
+                      - generic [ref=f12e1475]: Sunday, October 25th, 2026 at 10:48 AM
+                - region [ref=f12e1477] [cursor=pointer]:
+                  - generic [ref=f12e1478]:
+                    - checkbox [ref=f12e1479]
+                    - generic [aria-hidden] [ref=f12e1481]: F
+                  - generic [ref=f12e1483]:
+                    - button "Star message" [ref=f12e1485]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1491]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1495]
+                    - generic [ref=f12e1498]:
+                      - time [aria-hidden] [ref=f12e1499]: Yesterday
+                      - generic [ref=f12e1500]: Sunday, October 25th, 2026 at 10:46 AM
+                - region [ref=f12e1502] [cursor=pointer]:
+                  - generic [ref=f12e1503]:
+                    - checkbox [ref=f12e1504]
+                    - generic [aria-hidden] [ref=f12e1506]: F
+                  - generic [ref=f12e1508]:
+                    - button "Star message" [ref=f12e1510]
+                    - generic "faiyazpasha001@proton.me, cc1@gmail.com, bcc1@gmail.com" [ref=f12e1516]:
+                      - generic [ref=f12e1517]: faiyazpasha001@proton.me,
+                      - generic [ref=f12e1518]: cc1@gmail.com,
+                      - text: bcc1@gmail.com
+                    - heading "Send email Test 002" [level=2] [ref=f12e1522]
+                    - generic [ref=f12e1525]:
+                      - time [aria-hidden] [ref=f12e1526]: Yesterday
+                      - generic [ref=f12e1527]: Sunday, October 25th, 2026 at 10:45 AM
+                - region [ref=f12e1529] [cursor=pointer]:
+                  - generic [ref=f12e1530]:
+                    - checkbox [ref=f12e1531]
+                    - generic [aria-hidden] [ref=f12e1533]: F
+                  - generic [ref=f12e1535]:
+                    - button "Star message" [ref=f12e1537]
+                    - generic "faiyazpasha001@proton.me" [ref=f12e1543]
+                    - heading "Send email Test 002" [level=2] [ref=f12e1547]
+                    - generic [ref=f12e1550]:
+                      - time [aria-hidden] [ref=f12e1551]: Yesterday
+                      - generic [ref=f12e1552]: Sunday, October 25th, 2026 at 10:45 AM
+              - generic [ref=f12e1555]:
+                - button "Go to previous page" [disabled]
+                - button "Go to page 1": "1"
+                - button "Go to page 2" [ref=f12e1556] [cursor=pointer]: "2"
+                - button "Go to page 3" [ref=f12e1558] [cursor=pointer]: "3"
+                - button "Go to page 4" [ref=f12e1560] [cursor=pointer]: "4"
+                - button "Go to next page" [ref=f12e1562] [cursor=pointer]
+        - button "Show side panel" [expanded] [ref=f12e1567] [cursor=pointer]
+        - navigation "Side panel" [ref=f12e1571]:
+          - generic [ref=f12e1573]:
+            - button "Toggle Contacts app" [ref=f12e1574] [cursor=pointer]
+            - button "Toggle Calendar app" [ref=f12e1575] [cursor=pointer]:
+              - img [aria-hidden]:
+                - generic: "26"
+            - button "Toggle security center app" [ref=f12e1577] [cursor=pointer]
+            - button "Proton VPN Toggle VPN dashboard" [ref=f12e1579] [cursor=pointer]:
+              - img "Proton VPN"
+              - generic: Toggle VPN dashboard
+            - button "Toggle referral" [ref=f12e1580] [cursor=pointer]
+```
