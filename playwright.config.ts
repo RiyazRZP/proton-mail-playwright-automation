@@ -43,7 +43,7 @@ export default defineConfig({
   ],
 
   //retry
-  retries: 1,
+  retries: 2,
 
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -75,7 +75,7 @@ export default defineConfig({
 
     //setup project files
     {
-      name : "setup-projects-test",
+      name : "Test with dependency of setup",
       testMatch: [
           /ComposeEmailTestCases\.spec\.ts/
       ],
@@ -87,12 +87,12 @@ export default defineConfig({
 
     //without setup project 
     {
-      name: 'Normal Test',
+      name: 'Test with dependency of setup and setup2',
       testMatch: ['DraftsTestCases.spec.ts','InboxTestCases.spec.ts','SearchTestCases.spec.ts','AttachmentTestCase.spec.ts','AsyncBehaviourTestCase.spec.ts'],
-      //dependencies: ['setup2', 'setup'],
+      dependencies: ['setup2', 'setup'],
     },
     {
-      name: 'Without Any dependency TestFiles',
+      name: 'Test Without Any dependency',
       testMatch: ['LoginPageTestCases.spec.ts'],
     }
 

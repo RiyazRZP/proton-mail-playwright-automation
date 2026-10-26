@@ -72,7 +72,7 @@ for (const data of DraftTestData.emailTestData) {
         // Validate in Draft folder
         await homePage.clickOnDraftFolder();
 
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(1000);
         await page.reload();
 
         await expect(
@@ -86,7 +86,7 @@ for (const data of DraftTestData.emailTestData) {
         //open a send folder and validate
         await homePage.clickOnSentFolder();
 
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(1000);
         await page.reload();
                 
         await expect(
