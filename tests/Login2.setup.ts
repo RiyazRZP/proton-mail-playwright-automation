@@ -6,8 +6,8 @@ test("Creating a login state bypass Authentication and saving that state into st
     const context = await browser.newContext();
     const page = await context.newPage();
     const lp = new LoginPage(page);
-    const updatedPage = await lp.enterEmailPassAndSubmit(testData2.username,testData2.password);
-    await expect(updatedPage.getByText(testData2.userNameValidation)).toHaveText(testData2.userNameValidation);
-    await updatedPage.context().storageState({path:"loginState2.json"});
+    await lp.enterEmailPassAndSubmit(testData2.username,testData2.password);
+    await expect(page.getByText(testData2.userNameValidation)).toHaveText(testData2.userNameValidation);
+    await page.context().storageState({path:"loginState2.json"});
     await context.close();
 });

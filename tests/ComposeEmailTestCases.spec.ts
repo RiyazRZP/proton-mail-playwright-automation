@@ -5,132 +5,132 @@ import { HomePage } from '../POM_classes/HomePage';
 import { ComposeEmailPage } from '../POM_classes/ComposeEmailPage';
 import {ComposeEmailtestData} from '../testData/ComposeEmailTestData';
 
+
 //  01. Verify email is sent successfully
-for (const data of ComposeEmailtestData.emailTestData) {
-    test(`Verify email is sent successfully`, async ({ browser }) => {
-        test.setTimeout(60000);
-        const context = await browser.newContext();
-        const page = await context.newPage();
 
-        const loginPage = new LoginPage(page);
-        await loginPage.gotoHomePage();
+test(`Verify email is sent successfully`, async ({ browser }) => {
+    test.setTimeout(60000);
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-        const homePage = new HomePage(page);
-        await homePage.clickOnComposeEmail();
+    const loginPage = new LoginPage(page);
+    await loginPage.gotoHomePage();
 
-        const composeEmailPage = new ComposeEmailPage(page);
-        await composeEmailPage.enterToAddress(data.toAddress);
-        await composeEmailPage.enterSubject(data.subject);
-        await composeEmailPage.enterBody(data.body);
-        await composeEmailPage.clickSendEmail();
-        await homePage.waitForMessageSent();
+    const homePage = new HomePage(page);
+    await homePage.clickOnComposeEmail();
 
-        // Validate the email in the Sent folder
-        await homePage.clickOnSentFolder();
-        await page.waitForTimeout(2000);
-        await page.reload();
+    const composeEmailPage = new ComposeEmailPage(page);
+    await composeEmailPage.enterToAddress(ComposeEmailtestData.emailTestData[0].toAddress);
+    await composeEmailPage.enterSubject(ComposeEmailtestData.emailTestData[0].subject);
+    await composeEmailPage.enterBody(ComposeEmailtestData.emailTestData[0].body);
+    await composeEmailPage.clickSendEmail();
+    await homePage.waitForMessageSent();
 
-        await expect(page.locator(`//span[@data-testid="message-row:subject"] //span[text()="${data.subject}"]`).first())
-            .toHaveText(data.subject);
+    // Validate the email in the Sent folder
+    await homePage.clickOnSentFolder();
+    await page.waitForTimeout(2000);
+    await page.reload();
 
-        await context.close();
-    });
-}
+    await expect(page.locator(`//span[@data-testid="message-row:subject"] //span[text()="${ComposeEmailtestData.emailTestData[0].subject}"]`))
+        .toHaveText(ComposeEmailtestData.emailTestData[0].subject);
+
+    await context.close();
+});
+
 
 
 // 02. Validate sending with a missing recipient
 
-for (const data of ComposeEmailtestData.emailTestData) {
-    test(`Validate sending with a missing recipient`, async ({ browser }) => {
-        test.setTimeout(60000);
-        const context = await browser.newContext();
-        const page = await context.newPage();
 
-        const loginPage = new LoginPage(page);
-        await loginPage.gotoHomePage();
+test(`Validate sending with a missing recipient`, async ({ browser }) => {
+    test.setTimeout(60000);
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-        const homePage = new HomePage(page);
-        await homePage.clickOnComposeEmail();
+    const loginPage = new LoginPage(page);
+    await loginPage.gotoHomePage();
 
-        const composeEmailPage = new ComposeEmailPage(page);
-        await composeEmailPage.enterSubject(data.subject);
-        await composeEmailPage.enterBody(data.body);
-        await composeEmailPage.clickSendEmail();
+    const homePage = new HomePage(page);
+    await homePage.clickOnComposeEmail();
 
-        // Validate the missing recipient error
-        await expect(
-            page.getByRole('heading', {
-                name: data.RecipientMissing
-            })
-        ).toHaveText(data.RecipientMissing);
+    const composeEmailPage = new ComposeEmailPage(page);
+    await composeEmailPage.enterSubject(ComposeEmailtestData.emailTestData[1].subject);
+    await composeEmailPage.enterBody(ComposeEmailtestData.emailTestData[1].body);
+    await composeEmailPage.clickSendEmail();
 
-        await context.close();
-    });
-}
+    // Validate the missing recipient error
+    await expect(
+        page.getByRole('heading', {
+            name: ComposeEmailtestData.emailTestData[1].RecipientMissing
+        })
+    ).toHaveText(ComposeEmailtestData.emailTestData[1].RecipientMissing);
+
+    await context.close();
+});
+
 
 // 03. Validate sending with an invalid recipient
-for (const data of ComposeEmailtestData.emailTestData) {
-    test(`Validate sending with an invalid recipient`, async ({ browser }) => {
-        test.setTimeout(60000);
-        const context = await browser.newContext();
-        const page = await context.newPage();
 
-        const loginPage = new LoginPage(page);
-        await loginPage.gotoHomePage();
+test(`Validate sending with an invalid recipient`, async ({ browser }) => {
+    test.setTimeout(60000);
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-        const homePage = new HomePage(page);
-        await homePage.clickOnComposeEmail();
+    const loginPage = new LoginPage(page);
+    await loginPage.gotoHomePage();
 
-        const composeEmailPage = new ComposeEmailPage(page);
-        await composeEmailPage.enterToAddress(data.invalidToAddress);
-        await composeEmailPage.enterSubject(data.subject);
-        await composeEmailPage.enterBody(data.body);
-        await composeEmailPage.clickSendEmail();
+    const homePage = new HomePage(page);
+    await homePage.clickOnComposeEmail();
 
-        // Validate the error for the invalid recipient
-        await expect(page.getByText(data.invalidRecipientError))
-            .toHaveText(data.invalidRecipientError);
+    const composeEmailPage = new ComposeEmailPage(page);
+    await composeEmailPage.enterToAddress(ComposeEmailtestData.emailTestData[2].invalidToAddress);
+    await composeEmailPage.enterSubject(ComposeEmailtestData.emailTestData[2].subject);
+    await composeEmailPage.enterBody(ComposeEmailtestData.emailTestData[2].body);
+    await composeEmailPage.clickSendEmail();
 
-        await context.close();
-    });
-}
+    // Validate the error for the invalid recipient
+    await expect(page.getByText(ComposeEmailtestData.emailTestData[2].invalidRecipientError))
+        .toHaveText(ComposeEmailtestData.emailTestData[2].invalidRecipientError);
+
+    await context.close();
+});
 
 // 04.Send an email with CC and BCC
 
-for (const data of ComposeEmailtestData.emailTestData) {
-    test(`Send an email with CC and BCC`, async ({ browser }) => {
-        test.setTimeout(60000);
-        const context = await browser.newContext();
-        const page = await context.newPage();
 
-        const loginPage = new LoginPage(page);
-        await loginPage.gotoHomePage();
+test(`Send an email with CC and BCC`, async ({ browser }) => {
+    test.setTimeout(60000);
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-        const homePage = new HomePage(page);
-        await homePage.clickOnComposeEmail();
+    const loginPage = new LoginPage(page);
+    await loginPage.gotoHomePage();
 
-        const composeEmailPage = new ComposeEmailPage(page);
-        await composeEmailPage.enterToAddress(data.toAddress);
-        await composeEmailPage.enterSubject(data.subject);
-        await composeEmailPage.enterCC(data.cc);
-        await composeEmailPage.enterBCC(data.bcc);
-        await composeEmailPage.enterBody(data.body);
-        await composeEmailPage.clickSendEmail();
-        await homePage.waitForMessageSent();
+    const homePage = new HomePage(page);
+    await homePage.clickOnComposeEmail();
 
-        // Validate the email in the Sent folder with BCC:
-        await homePage.clickOnSentFolder();
+    const composeEmailPage = new ComposeEmailPage(page);
+    await composeEmailPage.enterToAddress(ComposeEmailtestData.emailTestData[3].toAddress);
+    await composeEmailPage.enterSubject(ComposeEmailtestData.emailTestData[3].subject);
+    await composeEmailPage.enterCC(ComposeEmailtestData.emailTestData[3].cc);
+    await composeEmailPage.enterBCC(ComposeEmailtestData.emailTestData[3].bcc);
+    await composeEmailPage.enterBody(ComposeEmailtestData.emailTestData[3].body);
+    await composeEmailPage.clickSendEmail();
+    await homePage.waitForMessageSent();
 
-        await page.waitForTimeout(2000);
-        await page.reload();
+    // Validate the email in the Sent folder with BCC:
+    await homePage.clickOnSentFolder();
 
-        await expect(page.locator(`//span[@data-testid="message-row:subject"] //span[text()="${data.subject}"]`).first())
-            .toHaveText(data.subject);
+    await page.waitForTimeout(2000);
+    await page.reload();
 
-        await expect(page.getByText(data.bcc).first())
-            .toHaveText(data.bcc);
+    await expect(page.locator(`//span[@data-testid="message-row:subject"] //span[text()="${ComposeEmailtestData.emailTestData[3].subject}"]`))
+        .toHaveText(ComposeEmailtestData.emailTestData[3].subject);
 
-        await context.close();
-    });
-}
+    await expect(page.getByText(ComposeEmailtestData.emailTestData[3].bcc).first())
+        .toHaveText(ComposeEmailtestData.emailTestData[3].bcc);
+
+    await context.close();
+});
+
 

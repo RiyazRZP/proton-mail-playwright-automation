@@ -18,7 +18,6 @@ export class LoginPage {
         await this.emailL.pressSequentially(email);
         await this.passwordL.pressSequentially(password);
         await this.loginButtonL.click();
-        return this.page;
     }
     public async gotoLoginURL(){
         await this.page.goto(testData.loginPageURL);

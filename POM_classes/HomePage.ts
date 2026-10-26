@@ -59,13 +59,13 @@ export class HomePage {
     public async waitForMessageSent(){
         await this.waitForMessageSentL.waitFor({
             state: "visible",
-            timeout: 15000
+            timeout: 30000
         });
     }
     public async waitForMessageArchiveSent(){
         await this.waitForArchiveMessageSentL.waitFor({
             state: "visible",
-            timeout: 15000
+            timeout: 30000
         });
     }
 

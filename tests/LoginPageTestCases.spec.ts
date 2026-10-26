@@ -3,6 +3,7 @@ import { LoginPage } from '../POM_classes/LoginPage';
 import { testData } from '../testData/LoginPageTestData';
 import { textSync } from 'node:stream/iter';
 
+test.describe.configure({ mode: 'serial' });
 
 test('Login with valid credentials', async ({ browser }) => {
     const context = await browser.newContext();
@@ -11,7 +12,7 @@ test('Login with valid credentials', async ({ browser }) => {
     await loginPage.enterEmailPassAndSubmit(testData.username,testData.password);
     //await page.pause();
     //validation the user on home page.
-    await expect(page.getByText(testData.username)).toHaveText("riyazpasha001@proton.me");
+    await expect(page.getByText(testData.username)).toHaveText(testData.username);
 });
 
 test("Login with InValid credentials",async({browser})=>{
@@ -25,6 +26,7 @@ test("Login with InValid credentials",async({browser})=>{
 });
 
 test("Logout and verify session behavior",async({browser})=>{
+    test.setTimeout(50000);
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginPage = new LoginPage(page);

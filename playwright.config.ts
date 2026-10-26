@@ -52,7 +52,7 @@ export default defineConfig({
     //trace: 'on-first-retry',
 
     browserName : 'chromium',
-
+    viewport: { width: 1920, height: 1080 },
     //Screenshots, videos and traces
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

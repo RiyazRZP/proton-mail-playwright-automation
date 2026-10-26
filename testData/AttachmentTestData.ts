@@ -4,7 +4,7 @@ const currentDir = __dirname;
 
 export const data = {
     toAddress: "faiyazpasha001@proton.me",
-    subject: `send email for validation attachment ${Date.now()}`,
+    subject: `send email for validation attachment ${crypto.randomUUID()}`,
     cc: "cc1@gmail.com",
     bcc: "bcc1@gmail.com",
     body: "This is the first test email.",
